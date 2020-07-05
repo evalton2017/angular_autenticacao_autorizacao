@@ -7,6 +7,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {LoginRoutingModule} from './autenticacao/login/login-routing.module';
 
 import { AppComponent } from './app.component';
+import { CadastroPfModule } from './autenticacao/cadastro-pf';
+import { CadastroPfRoutingModule } from './autenticacao/cadastro-pf/cadastro-pf-routing.module';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { AppComponent } from './app.component';
     LoginRoutingModule,
     CadastroPjModule,
     CadastroPjRoutingModule,
+    CadastroPfRoutingModule,
+    CadastroPfModule,
 
     AppRoutingModule
 

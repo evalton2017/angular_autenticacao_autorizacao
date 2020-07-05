@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { CadastroPj } from './models';
 import { CpfValidator } from 'src/app/shared/validators/cpf.validator';
 import { CnpjValidator } from 'src/app/shared/validators/cnpj.validator';
-import { CadastroPjService } from '../../services/cadastro-pj.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CadastroPf } from './model';
+import { CadastroPfService } from '../../services/cadastro-pf.service';
+
+
 
 @Component({
-  selector: 'app-cadastrar-pj',
-  templateUrl: './cadastrar-pj.component.html',
-  styleUrls: ['./cadastrar-pj.component.css']
+  selector: 'app-cadastrar-pf',
+  templateUrl: './cadastrar-pf.component.html',
+  styleUrls: ['./cadastrar-pf.component.css']
 })
-export class CadastrarPjComponent implements OnInit {
+export class CadastrarPfComponent implements OnInit {
 
   form: FormGroup;
-  cadastroPj: CadastroPj;
 
   constructor(
-    private fb: FormBuilder, 
+  	private fb: FormBuilder, 
   	private snackBar: MatSnackBar,
     private router: Router,
-    private cadastroPjService: CadastroPjService) { }
+    private cadastroPfService: CadastroPfService) { }
 
-    ngOnInit() {
-      this.gerarForm();
-    }
-
+  ngOnInit() {
+  	this.gerarForm();
+  }
 
   gerarForm() {
   	this.form = this.fb.group({
@@ -34,17 +34,16 @@ export class CadastrarPjComponent implements OnInit {
   		email: ['', [Validators.required, Validators.email]],
   		senha: ['', [Validators.required, Validators.minLength(6)]],
   		cpf: ['', [Validators.required, CpfValidator]],
-  		razaoSocial: ['', [Validators.required, Validators.minLength(5)]],
   		cnpj: ['', [Validators.required, CnpjValidator]]
   	});
   }
 
-  cadastrarPj() {
+  cadastrarPf() {
   	if (this.form.invalid) {
   		return;
     }
-    const cadastroPj: CadastroPj = this.form.value;
-    this.cadastroPjService.cadastrar(cadastroPj)
+    const cadastroPf: CadastroPf = this.form.value;
+    this.cadastroPfService.cadastrar(cadastroPf)
       .subscribe(
         data => {
           console.log(JSON.stringify(data));
@@ -63,5 +62,5 @@ export class CadastrarPjComponent implements OnInit {
       );
       return false;
   }
-
 }
+
