@@ -14,6 +14,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { LoginService } from './services/login.service';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +35,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatIconModule,
     MatSnackBarModule,
     FlexLayoutModule
+  ],
+  providers:[
+    LoginService
   ]
 })
 export class LoginModule { }
