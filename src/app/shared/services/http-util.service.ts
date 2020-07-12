@@ -26,7 +26,7 @@ export class HttpUtilService {
     const dadosUsuario = this.obterDadosUsuario();
     return dadosUsuario ? dadosUsuario.id : '';
   }
-  ObterIdEmpresa(): string{
+  obterIdEmpresa(): string{
     if(!localStorage['token']){
       return '';
     }

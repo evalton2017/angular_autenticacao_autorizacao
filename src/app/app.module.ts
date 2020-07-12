@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FuncionarioModule } from './funcionario';
 import { FuncionarioRoutingModule } from './funcionario/components/funcionario-routing.module';
+import { AdminModule, AdminRoutingModule } from './admin';
 
 @NgModule({
   declarations: [
@@ -29,11 +30,13 @@ import { FuncionarioRoutingModule } from './funcionario/components/funcionario-r
     FlexLayoutModule,
     FuncionarioModule,
     FuncionarioRoutingModule,
-
+ 
     CadastroPjModule,
     CadastroPjRoutingModule,
     CadastroPfRoutingModule,
     CadastroPfModule,
+    AdminModule,
+    AdminRoutingModule,
 
     AppRoutingModule
 
