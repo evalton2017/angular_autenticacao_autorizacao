@@ -41,4 +41,12 @@ export class HttpUtilService {
     //atob retorna em formato texto, retorna o token 1 pois utiliza jwt
     return JSON.parse(atob(localStorage['token'].split('.')[1]));
   }
+
+  obterPerfil(){
+    if(!localStorage['token']){
+      return '';
+    }
+    const dadosUsuario = this.obterDadosUsuario();
+    return dadosUsuario ? dadosUsuario.role: '';
+  }
 }

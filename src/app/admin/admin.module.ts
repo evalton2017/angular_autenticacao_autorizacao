@@ -26,6 +26,7 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio'; 
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import { AdminGuard } from './services';
 
 
 
@@ -69,6 +70,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     FuncionarioService,
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     { provide: MatPaginatorIntl, useClass: PtBrMatPaginatorIntl },
+    AdminGuard
   ],
   entryComponents: [ConfirmarDialog]
 
